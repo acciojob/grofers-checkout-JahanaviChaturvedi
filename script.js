@@ -3,7 +3,7 @@ getSumBtn.append("Get Total Price");
 document.body.appendChild(getSumBtn);
 
 const getSum = () => {
-	// Add your code here
+  // Add your code here
   const prices = document.querySelectorAll(".price"); 
   let total = 0;
 
@@ -11,7 +11,7 @@ const getSum = () => {
     total += parseFloat(priceElement.textContent); 
   });
 
-const existingTotalRow = document.querySelector("#total-row"); 
+  const existingTotalRow = document.querySelector("#total-row"); 
   if (existingTotalRow) {
     existingTotalRow.remove();
   }
@@ -27,6 +27,9 @@ const existingTotalRow = document.querySelector("#total-row");
 
   const table = document.querySelector("table");
   table.appendChild(totalRow);
+
+  const ansDiv = document.getElementById("ans");
+  ansDiv.textContent = "Total Price: Rs " + total;
 };
 
 getSumBtn.addEventListener("click", getSum);
